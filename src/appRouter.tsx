@@ -6,7 +6,7 @@ import LittleScratchPage from "./pages/LottieScratch";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/ready-to-die/",
     element: <RootLayout />,
     children: [
       {
