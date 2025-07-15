@@ -1,0 +1,205 @@
+/* 整個頁面的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 讓 .container 內部的元素垂直和水平置中 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平置中 */
+    justify-content: center; /* 垂直置中 */
+    height: 100vh; /* 使容器占滿整個頁面 */
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* 讓 .scratch-card 置中 */
+.scratch-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 90%;
+    max-width: 310px;
+    background: linear-gradient(180deg, #FF5350 0%, #D82F2C 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.x-button {
+    margin-top: 24px; /* 與卡片保持 24px 的距離 */
+    font-size: 20px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.40);
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 金幣圖片 */
+.coin {
+    position: absolute;
+}
+
+/* 每個金幣分佈位置 */
+.coin-1 { top: -2%; left: 80%; transform: rotate(-12deg); }
+.coin-2 { top: 4%; left: 12%; transform: rotate(24deg); }
+.coin-3 { top: 38%; left: 93%; transform: rotate(12deg); }
+.coin-4 { top: 70%; left: -2%; transform: rotate(-20deg); }
+.coin-5 { top: 94%; left: 30%; transform: rotate(12deg); }
+.coin-6 { top: 91%; left: 84%; transform: rotate(-20deg); }
+
+/* 閃爍圖片 */
+.spark {
+    position: absolute;
+}
+
+.spark-1 { top: -4%; left: 40%; }
+.spark-2 { top: 8%; left: 86%; }
+.spark-3 { top: 15%; left: -4%; }
+.spark-4 { top: 48%; left: 1%; }
+.spark-5 { top: 70%; left:94%; }
+.spark-6 { top: 88%; left:60%; }
+.spark-7 { top: 94%; left:5%; }
+
+/* 刮刮樂描述 */
+.scratch-content {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* 刮刮樂副標 */
+.scratch-content .sub-title {
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+/* 刮刮樂大標 */
+.scratch-content .title {
+    font-size: 36px;
+    color: #FFE581;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: -2px -2px 0 #DB312E, 2px -2px 0 #DB312E, -2px 2px 0 #DB312E, 2px 2px 0 #DB312E;
+}
+
+/* 刮刮樂區域 */
+.scratch-area {
+    position: relative;
+    border: 4px solid #FFE581;
+    max-width: 240px;
+    height: 144px;
+    margin: 0 auto 40px auto; /* 自動左右邊距，使其水平置中 */
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 水平與垂直置中內容 */
+}
+
+/* 灰色背景層，覆蓋在 "點我！" 文字上 */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.9); /* 半透明灰色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2; /* 確保在動畫上面 */
+}
+
+/* 點我！提示 */
+.mask-text {
+    font-size: 24px;
+    color: #fff;
+    z-index: 3;
+}
+
+/* Lottie 粉色筆刷動畫 */
+#scratch-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none; /* 動畫開始前隱藏 */
+}
+
+/* 刮刮樂結果 */
+.scratch-message {
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    z-index: 1;
+}
+
+/* 折抵卷 */
+.scratch-message .coupon-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #71747A;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.scratch-message .coupon-content {
+    color: #71747A;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.scratch-message .coupon-item {
+    color: #EB403D;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.scratch-message .coupon-item .mins {
+    font-size: 24px;
+}
+
+
+/* 煙火動畫 */
+#firework-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;  /* 固定寬度 */
+    transform: translate(-50%, -58%); /* 將動畫中心點對齊到 .scratch-card 中心 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* 不阻擋用戶操作 */
+    z-index: 3; /* 確保煙火動畫在 canvas 刮刮樂結果之上 */
+}
+
+/* 當裝置寬度小於 400px 時等比縮放 */
+@media (max-width: 400px) {
+    #lottie-animation {
+        width: 100vw; /* 使用視窗寬度的 80% 進行等比縮放 */
+    }
+}
+

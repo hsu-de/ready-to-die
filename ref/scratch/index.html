@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刮刮樂範例</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- 引入外部CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 刮刮樂彈窗和內容 -->
+    <div class="container">
+        <div class="scratch-card">
+            <!-- 添加多個金幣元素 -->
+            <img src="assets/coin.svg" class="coin coin-1">
+            <img src="assets/coin.svg" class="coin coin-2">
+            <img src="assets/coin.svg" class="coin coin-3">
+            <img src="assets/coin.svg" class="coin coin-4">
+            <img src="assets/coin.svg" class="coin coin-5">
+            <img src="assets/coin.svg" class="coin coin-6">
+            <!-- 添加多個閃爍元素 -->
+            <img src="assets/spark.svg" class="spark spark-1">
+            <img src="assets/spark.svg" class="spark spark-2">
+            <img src="assets/spark.svg" class="spark spark-3">
+            <img src="assets/spark.svg" class="spark spark-4">
+            <img src="assets/spark.svg" class="spark spark-5">
+            <img src="assets/spark.svg" class="spark spark-6">
+            <img src="assets/spark.svg" class="spark spark-7">
+            <!-- 主要內容 -->
+            <div>
+                <div class="scratch-content">
+                    <div class="sub-title">歡慶春節抽時數折抵
+                    </div>
+                    <div class="title">iRent 刮刮樂</div>
+                </div>
+                <div class="scratch-area">
+                     <!-- 灰色背景層，顯示 "點我！" -->
+                     <div class="overlay">
+                        <span class="mask-text">點我！</span>
+                    </div>
+                    <!-- Lottie 粉色筆刷動畫 -->
+                    <div id="scratch-animation"></div>
+
+                    <div class="scratch-message">
+                        <div class="coupon-title">
+                            <img src="assets/car.svg">
+                            <span>汽車春節 60 分券</span>
+                        </div>
+                        <div class="coupon-content">限春節訂單，單筆租滿 6 小時</div>
+                        <div class="coupon-item">可折抵 <span class="mins">60</span> 分鐘</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 煙火動畫 -->
+        <div id="firework-animation"></div>
+        <div class="x-button">X</div> <!-- X 按鈕與卡片分開 -->
+    </div>
+
+    <script src="script.js"></script> <!-- 引入外部JS -->
+</body>
+
+</html>
